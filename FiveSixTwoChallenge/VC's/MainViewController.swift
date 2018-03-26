@@ -35,7 +35,7 @@
                 
             }
             viewModel.getHand {
-                print(self.viewModel.cardsInHand(), "Cards in hand")
+                print(self.viewModel.cardsInHand(), "Cards Drawn")
                 self.cardsInHand = self.viewModel.cardsInHand()
             }
             
@@ -47,7 +47,7 @@
                 print(self.viewModel.cardsInHand(), "Cards in hand")
                 print(self.cardsInHand, " Cards count")
                 self.cardsInHand = self.viewModel.cardsInHand()
-                self.title = "\(self.cardsInHand) Cards in hand"
+                self.title = "\(self.cardsInHand) Cards Drawn"
                 if self.cardsInHand > 0 {
                     self.showHandButtonOutlet.isEnabled = true
                 } else {
