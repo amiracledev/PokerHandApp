@@ -22,6 +22,7 @@ class PlayerHandViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         
     }
+    var code = ""
     @IBAction func dismissView(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -39,5 +40,28 @@ class PlayerHandViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.cardImage.sd_setImage(with: photoUrl)
         return cell
     }
- 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        code = viewModel.cardCodeforDrawingInHand(for: indexPath)
+        print(indexPath, "Indexpath")
+        print(code, "code is here")
+        SetUpAlert(id: code)
+        
+    }
+    func SetUpAlert(id: String) {
+        let alert = UIAlertController(title: "Do you want to remove this card?", message: "", preferredStyle: .alert)
+        let delete = UIAlertAction(title: "Confirm", style: .default) { (action) in
+            self.viewModel.apiClient.removeCard(id: id)
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        })
+        
+        alert.addAction(delete)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
 }

@@ -209,5 +209,53 @@ class APIClient: NSObject {
         }
         dataTask.resume()
     }
+    
+    func removeCard(id: String) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        var currentId = ""
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Deck")
+        request.returnsObjectsAsFaults = false
+        do {
+            let results = try managedContext.fetch(request)
+            if results.count > 0 {
+                for result in (results as? [NSManagedObject])! {
+                    if let deckID = result.value(forKey: "deckid") as? String {
+                        
+                        currentId = deckID
+                    }
+                }
+            }
+        } catch {
+            print("errors")
+        }
+        let dealer = "https://deckofcardsapi.com/api/deck/\(currentId)/pile/player1/draw/?cards=\(id)"
+        print(dealer, "link with CURRENTID")
+        guard let url = URL(string: dealer) else {
+            print("Error unwrapping URL")
+            return
+        }
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: url) { (data, response, error) in
+            
+            guard let unwrappedData = data else { print("Error getting data"); return }
+            
+            do {
+                
+                if let responseJSON = try JSONSerialization.jsonObject(with: unwrappedData, options: .allowFragments) as? NSDictionary {
+                    
+                    if let allCards = responseJSON.value(forKeyPath: "piles.player1.cards") as? [NSDictionary] {
+                        print(allCards.count)
+                   ProgressHUD.showSuccess("Card removed!")
+                    }
+                }
+            } catch {
+    
+                print("Error getting API data: \(error.localizedDescription)")
+            }
+        }
+        dataTask.resume()
+        
+    }
 
 }
