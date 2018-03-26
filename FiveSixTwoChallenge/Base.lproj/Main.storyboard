@@ -197,7 +197,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WPA-yk-YAd">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="75" width="375" height="592"/>
                                 <color key="backgroundColor" red="0.001517988567" green="0.534601047" blue="0.002355297475" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="handCell" rowHeight="125" id="ufb-9G-7TO" customClass="PlayerHandTableViewCell" customModule="FiveSixTwoChallenge" customModuleProvider="target">
@@ -261,8 +261,8 @@
                             <constraint firstItem="WPA-yk-YAd" firstAttribute="leading" secondItem="4Dx-eb-9jo" secondAttribute="leading" id="1mH-co-AxM"/>
                             <constraint firstItem="4Dx-eb-9jo" firstAttribute="trailing" secondItem="WPA-yk-YAd" secondAttribute="trailing" id="4bH-cq-GJI"/>
                             <constraint firstItem="z1l-kv-Gp1" firstAttribute="top" secondItem="au7-c3-fDn" secondAttribute="top" constant="30" id="M9J-sr-qmL"/>
-                            <constraint firstItem="WPA-yk-YAd" firstAttribute="top" secondItem="4Dx-eb-9jo" secondAttribute="top" constant="24" id="Mob-wS-A1d"/>
-                            <constraint firstItem="WPA-yk-YAd" firstAttribute="top" secondItem="z1l-kv-Gp1" secondAttribute="bottom" constant="2" id="Nyk-o0-Prn"/>
+                            <constraint firstItem="WPA-yk-YAd" firstAttribute="top" secondItem="4Dx-eb-9jo" secondAttribute="top" constant="55" id="Mob-wS-A1d"/>
+                            <constraint firstItem="WPA-yk-YAd" firstAttribute="top" secondItem="z1l-kv-Gp1" secondAttribute="bottom" constant="33" id="Nyk-o0-Prn"/>
                             <constraint firstItem="z1l-kv-Gp1" firstAttribute="trailing" secondItem="4Dx-eb-9jo" secondAttribute="trailing" id="VTr-4y-two"/>
                             <constraint firstItem="4Dx-eb-9jo" firstAttribute="bottom" secondItem="WPA-yk-YAd" secondAttribute="bottom" id="o1K-5a-hjG"/>
                             <constraint firstItem="z1l-kv-Gp1" firstAttribute="leading" secondItem="4Dx-eb-9jo" secondAttribute="leading" id="p7u-qq-SIr"/>
