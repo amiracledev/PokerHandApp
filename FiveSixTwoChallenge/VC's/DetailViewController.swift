@@ -8,16 +8,16 @@
 
 import UIKit
 import SDWebImage
-
+import ProgressHUD
 class DetailViewController: UIViewController {
     @IBOutlet weak var detailLabel: UILabel!
-     @IBOutlet var apiClient: APIClient!
+    @IBOutlet var apiClient: APIClient!
     @IBOutlet weak var imageView: UIImageView!
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     var code = ""
     var suit = ""
     var value = ""
-  var imgLink = String()
+    var imgLink = String()
     override func viewDidLoad() {
         super.viewDidLoad()
         detailLabel.text = value + " of " + suit
@@ -38,12 +38,13 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     @IBAction func saveButton(_ sender: Any) {
         //pass data into method to draw a hand
         print(code, "Printing card code to pass in to core data")
         apiClient.drawCard(id: code)
         activityIndicator.startAnimating()
+        ProgressHUD.showSuccess("Nice Choice!")
         dismiss(animated: true, completion: nil)
     }
     

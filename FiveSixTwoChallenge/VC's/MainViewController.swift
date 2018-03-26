@@ -8,7 +8,7 @@
     
     import UIKit
     import SDWebImage
-
+    
     class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
         @IBOutlet weak var collectionView: UICollectionView!
         @IBOutlet weak var showHandButtonOutlet: UIBarButtonItem!
@@ -32,7 +32,7 @@
             view.addSubview(activityIndicator)
             viewModel.getCards {
                 self.collectionView.reloadData()
-            
+                
             }
             viewModel.getHand {
                 print(self.viewModel.cardsInHand(), "Cards in hand")
@@ -88,20 +88,21 @@
         
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
             if self.cardsInHand >= 5 {
-               SetUpAlert()
+                SetUpAlert()
             } else {
                 let tag = viewModel.imageDisplay(for: indexPath)
                 self.cardImgLink = tag
                 self.suit = viewModel.cardLabelToDisplay(for: indexPath)
                 self.codeMain = viewModel.cardCodeforDrawing(for: indexPath)
                 self.valueMain = viewModel.cardValueforDrawing(for: indexPath)
+                self.cardsInHand = self.viewModel.cardsInHand()
                 activityIndicator.startAnimating()
                 performSegue(withIdentifier: "CardCell", sender: nil)
             }
             
         }
         func SetUpAlert() {
-        let alert = UIAlertController(title: "🚫 Slow down buddy! 🚫", message: "This is 5 card Draw not Uno! 😁", preferredStyle: .alert)
+            let alert = UIAlertController(title: "🚫 Slow down buddy Only Five Cards! 🚫", message: "This is 5 card Draw not Uno! 😁", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) in
                 alert.dismiss(animated: true, completion: nil)
             }))

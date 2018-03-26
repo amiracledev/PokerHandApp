@@ -12,7 +12,7 @@ import CoreData
 class ViewModel: NSObject {
     @IBOutlet var apiClient: APIClient!
     
-   
+    
     var hand: [NSDictionary]?
     var cards: [NSDictionary]?
     var items: [NSManagedObject] = []

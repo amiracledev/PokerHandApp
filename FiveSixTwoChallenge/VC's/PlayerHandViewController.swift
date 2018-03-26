@@ -18,7 +18,7 @@ class PlayerHandViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.dataSource = self
         // Do any additional setup after loading the view.
         viewModel.getHand {
-        self.tableView.reloadData()
+            self.tableView.reloadData()
         }
         
     }
@@ -34,17 +34,10 @@ class PlayerHandViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "handCell") as! PlayerHandTableViewCell
         let value = viewModel.cardValueforDrawingInHand(for: indexPath) + " of " + viewModel.cardLabelToDisplayInHand(for: indexPath)
         cell.cardSuitValueLabel.text = value
-       let handImg = viewModel.imageDisplayInHand(for: indexPath)
+        let handImg = viewModel.imageDisplayInHand(for: indexPath)
         let photoUrl = URL(string: handImg)
         cell.cardImage.sd_setImage(with: photoUrl)
         return cell
     }
-    
-//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-//        print(indexPath)
-//        
-//        return
-//    }
-    
-    
+ 
 }

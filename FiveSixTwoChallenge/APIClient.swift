@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import ProgressHUD
 class APIClient: NSObject {
 
     
@@ -15,7 +16,7 @@ class APIClient: NSObject {
     var newID = ""
         func getDeckID () {
         guard let url = URL(string: "https://deckofcardsapi.com/api/deck/new/") else {
-            print("Error unwrapping URL")
+            ProgressHUD.showError("Error unwrapping URL")
             return
         }
         let session = URLSession.shared
@@ -35,8 +36,8 @@ class APIClient: NSObject {
                     }
                 }
             } catch {
-                
-                print("Error getting API data: \(error.localizedDescription)")
+                ProgressHUD.showError(error.localizedDescription)
+        
             }
         }
         dataTask.resume()
@@ -57,7 +58,8 @@ class APIClient: NSObject {
             try managedContext.save()
           
         } catch let err as NSError {
-            print("Failed to save th Deck Id", err)
+           print(err, "")
+        
         }
        
         }
