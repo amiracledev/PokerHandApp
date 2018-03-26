@@ -198,7 +198,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WPA-yk-YAd">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.001517988567" green="0.534601047" blue="0.002355297475" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="handCell" rowHeight="125" id="ufb-9G-7TO" customClass="PlayerHandTableViewCell" customModule="FiveSixTwoChallenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="125"/>
@@ -218,7 +218,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oW8-uQ-mEp">
                                                     <rect key="frame" x="111" y="52" width="250" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -231,6 +231,7 @@
                                                 <constraint firstItem="TWn-mJ-yEd" firstAttribute="centerY" secondItem="tAf-wA-Qcf" secondAttribute="centerY" id="tzS-p0-9c7"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.001517988567" green="0.534601047" blue="0.002355297475" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="cardImage" destination="TWn-mJ-yEd" id="3T7-75-i6u"/>
                                             <outlet property="cardSuitValueLabel" destination="oW8-uQ-mEp" id="vLV-Cx-TjN"/>
@@ -242,17 +243,8 @@
                                     <outlet property="delegate" destination="Aic-Gu-hZ5" id="cYp-bR-cKB"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bg7-Oa-YYA">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <items>
-                                    <navigationItem id="UJt-1o-R57">
-                                        <barButtonItem key="backBarButtonItem" title="Back" id="HgG-SV-Mu8"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z1l-kv-Gp1">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1l-kv-Gp1">
+                                <rect key="frame" x="0.0" y="30" width="375" height="12"/>
                                 <items>
                                     <navigationItem id="xZg-u5-C4a">
                                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="Yoa-IQ-PmZ">
@@ -267,12 +259,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="WPA-yk-YAd" firstAttribute="leading" secondItem="4Dx-eb-9jo" secondAttribute="leading" id="1mH-co-AxM"/>
-                            <constraint firstItem="bg7-Oa-YYA" firstAttribute="leading" secondItem="WPA-yk-YAd" secondAttribute="leading" id="4Z5-OT-KaQ"/>
                             <constraint firstItem="4Dx-eb-9jo" firstAttribute="trailing" secondItem="WPA-yk-YAd" secondAttribute="trailing" id="4bH-cq-GJI"/>
+                            <constraint firstItem="z1l-kv-Gp1" firstAttribute="top" secondItem="au7-c3-fDn" secondAttribute="top" constant="30" id="M9J-sr-qmL"/>
                             <constraint firstItem="WPA-yk-YAd" firstAttribute="top" secondItem="4Dx-eb-9jo" secondAttribute="top" constant="24" id="Mob-wS-A1d"/>
-                            <constraint firstItem="bg7-Oa-YYA" firstAttribute="trailing" secondItem="WPA-yk-YAd" secondAttribute="trailing" id="NV3-RD-0Yv"/>
+                            <constraint firstItem="WPA-yk-YAd" firstAttribute="top" secondItem="z1l-kv-Gp1" secondAttribute="bottom" constant="2" id="Nyk-o0-Prn"/>
+                            <constraint firstItem="z1l-kv-Gp1" firstAttribute="trailing" secondItem="4Dx-eb-9jo" secondAttribute="trailing" id="VTr-4y-two"/>
                             <constraint firstItem="4Dx-eb-9jo" firstAttribute="bottom" secondItem="WPA-yk-YAd" secondAttribute="bottom" id="o1K-5a-hjG"/>
-                            <constraint firstItem="bg7-Oa-YYA" firstAttribute="bottom" secondItem="WPA-yk-YAd" secondAttribute="top" id="qSn-57-UN4"/>
+                            <constraint firstItem="z1l-kv-Gp1" firstAttribute="leading" secondItem="4Dx-eb-9jo" secondAttribute="leading" id="p7u-qq-SIr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Dx-eb-9jo"/>
                     </view>
