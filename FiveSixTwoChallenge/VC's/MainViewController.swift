@@ -16,6 +16,7 @@
         @IBOutlet var viewModel: ViewModel!
         
         var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+        
         var cardImgLink = String()
         var cardSuitCode = "String()"
         var codeMain = ""
@@ -35,17 +36,13 @@
                 
             }
             viewModel.getHand {
-                print(self.viewModel.cardsInHand(), "Cards Drawn")
                 self.cardsInHand = self.viewModel.cardsInHand()
             }
-            
-            
         }
         override func viewDidAppear(_ animated: Bool) {
             super.viewDidAppear(true)
             viewModel.getHand {
-                print(self.viewModel.cardsInHand(), "Cards in hand")
-                print(self.cardsInHand, " Cards count")
+                
                 self.cardsInHand = self.viewModel.cardsInHand()
                 self.title = "\(self.cardsInHand) Cards Drawn"
                 if self.cardsInHand > 0 {
@@ -54,10 +51,6 @@
                     self.showHandButtonOutlet.isEnabled = false
                 }
             }
-        }
-        override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(true)
-        
         }
         @IBAction func showHand(_ sender: Any) {
             print("right bar button tapped")
@@ -130,7 +123,7 @@
             }
             
         }
-    
+        
         
     }
     

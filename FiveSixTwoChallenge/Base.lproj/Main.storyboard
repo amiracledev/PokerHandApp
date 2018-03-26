@@ -35,7 +35,7 @@
                                     <constraint firstAttribute="height" constant="50" id="tZs-6i-jtU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="let's Play">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -124,7 +124,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DWm-DN-nif">
-                                                    <rect key="frame" x="2" y="8" width="98" height="83"/>
+                                                    <rect key="frame" x="8" y="8" width="92" height="83"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dir-RC-QlX">
                                                     <rect key="frame" x="35" y="97" width="42" height="21"/>
@@ -135,7 +135,7 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="DWm-DN-nif" firstAttribute="leading" secondItem="D7b-Zq-JOq" secondAttribute="leadingMargin" constant="-6" id="5A6-hW-ZQh"/>
+                                            <constraint firstItem="DWm-DN-nif" firstAttribute="leading" secondItem="D7b-Zq-JOq" secondAttribute="leadingMargin" id="5A6-hW-ZQh"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="DWm-DN-nif" secondAttribute="trailing" constant="4" id="IHi-EH-8u9"/>
                                             <constraint firstItem="DWm-DN-nif" firstAttribute="top" secondItem="D7b-Zq-JOq" secondAttribute="topMargin" id="J3N-oh-qya"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="DWm-DN-nif" secondAttribute="bottom" constant="39" id="fMh-RX-LZQ"/>

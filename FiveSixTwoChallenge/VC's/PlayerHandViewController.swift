@@ -12,19 +12,30 @@ import SDWebImage
 class PlayerHandViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var viewModel: ViewModel!
     @IBOutlet weak var tableView: UITableView!
+    var code = ""
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        view.addSubview(activityIndicator)
         // Do any additional setup after loading the view.
         viewModel.getHand {
             self.tableView.reloadData()
         }
         
     }
-    var code = ""
     @IBAction func dismissView(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        activityIndicator.stopAnimating()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,8 +53,6 @@ class PlayerHandViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         code = viewModel.cardCodeforDrawingInHand(for: indexPath)
-        print(indexPath, "Indexpath")
-        print(code, "code is here")
         SetUpAlert(id: code)
         
     }
@@ -51,6 +60,7 @@ class PlayerHandViewController: UIViewController, UITableViewDelegate, UITableVi
         let alert = UIAlertController(title: "Do you want to remove this card?", message: "", preferredStyle: .alert)
         let delete = UIAlertAction(title: "Confirm", style: .default) { (action) in
             self.viewModel.apiClient.removeCard(id: id)
+            self.activityIndicator.startAnimating()
             self.dismiss(animated: true, completion: nil)
         }
         
