@@ -19,7 +19,6 @@
 		CF42550920678CB700127EA1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF42550820678CB700127EA1 /* MainViewController.swift */; };
 		CF42550D206793D300127EA1 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF42550C206793D300127EA1 /* CardCollectionViewCell.swift */; };
 		CF4255192067A41300127EA1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4255182067A41300127EA1 /* DetailViewController.swift */; };
-		CF9158AF20682FB8006C3FF3 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9158AE20682FB8006C3FF3 /* Card.swift */; };
 		CF9158B120687908006C3FF3 /* PlayerHandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9158B020687908006C3FF3 /* PlayerHandTableViewCell.swift */; };
 		CF9158B42068794E006C3FF3 /* PlayerHandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9158B32068794E006C3FF3 /* PlayerHandViewController.swift */; };
 /* End PBXBuildFile section */
@@ -41,7 +40,6 @@
 		CF42550C206793D300127EA1 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		CF42551720679B3600127EA1 /* FiveSixTwoChallenge-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FiveSixTwoChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
 		CF4255182067A41300127EA1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		CF9158AE20682FB8006C3FF3 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		CF9158B020687908006C3FF3 /* PlayerHandTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHandTableViewCell.swift; sourceTree = "<group>"; };
 		CF9158B32068794E006C3FF3 /* PlayerHandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHandViewController.swift; sourceTree = "<group>"; };
 		D9AF9DD1FA99178A5824A5CC /* Pods-FiveSixTwoChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiveSixTwoChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FiveSixTwoChallenge/Pods-FiveSixTwoChallenge.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				CF4254F4206782B800127EA1 /* FiveSixTwoChallenge.xcdatamodeld */,
 				CF4254F9206782B800127EA1 /* LaunchScreen.storyboard */,
 				CF4254F1206782B800127EA1 /* Main.storyboard */,
-				CF9158AE20682FB8006C3FF3 /* Card.swift */,
 			);
 			path = FiveSixTwoChallenge;
 			sourceTree = "<group>";
@@ -274,7 +271,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF42550920678CB700127EA1 /* MainViewController.swift in Sources */,
-				CF9158AF20682FB8006C3FF3 /* Card.swift in Sources */,
 				CF4255052067898E00127EA1 /* ViewModel.swift in Sources */,
 				CF4254F6206782B800127EA1 /* FiveSixTwoChallenge.xcdatamodeld in Sources */,
 				CF4254F0206782B800127EA1 /* ViewController.swift in Sources */,
